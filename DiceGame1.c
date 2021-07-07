@@ -2,15 +2,22 @@
 #include <stdlib.h>
 
 int main(){
-  int i,n,sum=0;
+  int i,n,m,sum=0;
+  char name[10];
 
+  printf("What is your name?\n");
+  scanf("%s",&name);
+  printf("Hello,%s!\n",name);
   printf("Rolling the dice...\n");
 
-  for(i=0;i<2;i++){
-    n=rand()%6+1;
-    printf("Die %d:%d\n",i,n);
-    sum+=n;
-  }
+  n=rand()%6+1;
+  m=rand()%6+1;
+  sum=n+m;
+  printf("Die 1:%d\n",n);
+  printf("Die 2:%d\n",m);
 
-  printf("Total value:%d\n",sum);
+  if(sum>7)printf("%s won!\n",name);
+  else printf("%s lost!\n",name);
+
+  return 0;
 }
